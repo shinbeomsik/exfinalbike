@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop">
+
+
+	<insert id="create" parameterType="shopVO">
+		insert into shop values 
+		(null,#{shop_name},#{shop_content},null,#{shop_location},#{shop_businessnumber},null)
+	</insert>
+
+
+</mapper>
