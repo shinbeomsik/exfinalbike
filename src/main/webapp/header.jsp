@@ -12,6 +12,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery-3.6.4.js"></script>
-<link rel="stylesheet" href="resources/css/style.css">
+<script type="text/javascript" src="http://localhost:8887/bf/resources/js/jquery-3.6.4.js"></script>
+<link rel="stylesheet" href="http://localhost:8887/bf/resources/css/style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">

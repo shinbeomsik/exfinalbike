@@ -1,6 +1,6 @@
 package com.spring.bf.shop;
 
-public class shopVO {
+public class ShopVO {
 	private  int shop_no;
 	private  String shop_name;
 	private  String shop_content;

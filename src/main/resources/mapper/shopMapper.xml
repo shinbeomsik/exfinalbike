@@ -5,7 +5,7 @@
 
 	<insert id="create" parameterType="shopVO">
 		insert into shop values 
-		(null,#{shop_name},#{shop_content},null,#{shop_location},#{shop_businessnumber},null)
+		(null,#{shop_name},#{shop_content},#{shop_img},#{shop_location},#{shop_businessnumber},null)
 	</insert>
 
 
