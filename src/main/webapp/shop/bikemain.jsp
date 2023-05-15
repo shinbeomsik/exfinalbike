@@ -9,32 +9,17 @@
 <title>가게정보페이지</title>
 <script type="text/javascript" src="../resources/js/jquery-3.6.4.js"></script>
 <script type="text/javascript">
-	/* $(function() {
-		$.ajax({
-			url : "exshop",
-			success : function(x) {
-				$('#shopbbs').append(x)
-			} //success
-		}) //ajax
 
-	})//$ */
 </script>
 <style>
-#search {
-	text-align: center;
-}
 
-#shopbbs {
- 	margin: 0 auto;
-	height: 400px;
-	
-}
 </style>
-<jsp:include page="../header.jsp"></jsp:include>
+<link rel="stylesheet" href="resources/css/bbsstyle.css">
+
 </head>
 <body>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<div id="shopbbs"></div>
+	<div id="main"></div>
 
 </body>
 </html>

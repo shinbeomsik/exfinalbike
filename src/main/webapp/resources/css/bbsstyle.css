@@ -29,7 +29,7 @@ a:hover {
 }
 
 #title {
-    float: left;
+   float: left;
     font-size: 18px;
     font-weight: bold;
 }
@@ -41,6 +41,12 @@ a:hover {
 }
 
 /* 게시판 */
+.best {
+	font-size:14px;
+	font-weight:normal;
+	padding-left:5px;
+}
+
 table {
     width: 600px;
     table-layout: fixed;
@@ -86,7 +92,6 @@ table {
 
 #search {
     padding-bottom: 20px;
-    text-align: center;
 }
 
 /* 그룹 */
@@ -175,4 +180,26 @@ textarea {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+/* 검색 */
+.scontent {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 인기게시물 */
+#demo {
+    margin: auto;
+    background: rgb(242, 242, 242);
+    width: 550px;
+    height: 160px;
+    vertical-align: middle;
+}
+
+.hotcon {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

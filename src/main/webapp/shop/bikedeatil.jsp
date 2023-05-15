@@ -14,7 +14,6 @@
 	vertical-align: center;
 }
 </style>
-<jsp:include page="../header.jsp"></jsp:include>
 </head>
 <body>
 	<jsp:include page="../nav.jsp"></jsp:include>

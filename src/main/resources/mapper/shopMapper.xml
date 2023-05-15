@@ -3,10 +3,14 @@
 <mapper namespace="shop">
 
 
-	<insert id="create" parameterType="shopVO">
-		insert into shop values 
+	<insert id="insert" parameterType="shopVO">
+		insert into bike values 
 		(null,#{shop_name},#{shop_content},#{shop_img},#{shop_location},#{shop_businessnumber},null)
 	</insert>
+	
+	<select id="all" resultType="shopVO">
+		select * from bike
+	</select>
 
 
 </mapper>
