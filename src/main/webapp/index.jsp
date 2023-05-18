@@ -32,8 +32,8 @@
                 </a>
             </div>
             <div class="col group2">
-                <a href="#">
-                    <button class="btn btn-dark mainbtn">자전거 가게</button>
+                <a href="bike/bikemain">
+                    <button class="btn btn-dark mainbtn">자전거 정보</button>
                 </a>
                 <a href="#">
                     <button class="btn btn-dark mainbtn">이용권 구매</button>

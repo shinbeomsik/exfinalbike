@@ -6,6 +6,7 @@ public class BikeVO {
 	private String bike_name;
 	private String bike_category;
 	private String bike_img;
+	private String bike_detail;
 	public int getBike_no() {
 		return bike_no;
 	}
@@ -36,13 +37,23 @@ public class BikeVO {
 	public void setBike_img(String bike_img) {
 		this.bike_img = bike_img;
 	}
-	
-	
+	public String getBike_detail() {
+		return bike_detail;
+	}
+	public void setBike_detail(String bike_detail) {
+		this.bike_detail = bike_detail;
+	}
 	@Override
 	public String toString() {
 		return "BikeVO [bike_no=" + bike_no + ", bike_brand=" + bike_brand + ", bike_name=" + bike_name
-				+ ", bike_category=" + bike_category + ", bike_img=" + bike_img + "]";
+				+ ", bike_category=" + bike_category + ", bike_img=" + bike_img + ", bike_detail=" + bike_detail + "]";
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -8,9 +8,11 @@
    <typeAliases>
        <typeAlias type="com.spring.bf.bike.BikeVO" alias="bikeVO"></typeAlias>
        <typeAlias type="com.spring.bf.bike.PageVO" alias="pageVO"></typeAlias>
+       <typeAlias type="com.spring.bf.bike.BikeReplyVO" alias="bikereplyVO"></typeAlias>
    </typeAliases>
    <mappers>
    <!-- SQL문 정의하는 파일들의 목록을 지정. -->
       <mapper resource="mapper/bikeMapper.xml" />
+      <mapper resource="mapper/bikeReplyMapper.xml" />
    </mappers>
 </configuration>
