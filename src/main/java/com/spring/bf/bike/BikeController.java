@@ -18,6 +18,9 @@ public class BikeController {
 	@Autowired
 	BikeDAO dao;
 	
+	@Autowired
+	BikeReplyDAO dao2;
+	
 	//자전거 페이지를 불러오면서 1페이지에 데이터를 가져와서불러옴
 	@RequestMapping("bike/bikemain")
 	public String bikeMain(Model model) {
@@ -65,6 +68,8 @@ public class BikeController {
 	@RequestMapping("bike/bikeone")
 	public void one(int bike_no, Model model) {
 		BikeVO bag = dao.one(bike_no);
+		//댓글 리스트 dao2.
+		
 		model.addAttribute("bag", bag);
 	}
 

@@ -24,10 +24,10 @@ public class BikeReplyController {
 	BikeReplyDAO dao;
 
 	@RequestMapping("bike/bikereplyinsert")
-	public String insert(BikeReplyVO bag ,HttpSession session) {
+	public void insert(BikeReplyVO bag ) {
 		
-		
-		bag.setDate(Timestamp.valueOf(LocalDateTime.now()));
+		//Mapper에 그냥 now()함수써서 넣어봄 안되면 이걸로 다시 바꿔야함
+		//bag.setDate(Timestamp.valueOf(LocalDateTime.now()));
 		
 		
 		/*
@@ -39,7 +39,6 @@ public class BikeReplyController {
 		dao.insert(bag);
 		
 		
-		return "bikeone";
 	}
 
 }

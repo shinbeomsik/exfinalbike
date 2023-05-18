@@ -8,7 +8,7 @@ public class BikeReplyVO {
 	
 	private int bikereply_no;
 	private int bike_no;
-	private String writer;
+	private String bikereply_writer;
 	private String bikereply_content;
 	private String bikereply_rating;
 	
@@ -31,12 +31,14 @@ public class BikeReplyVO {
 		this.bike_no = bike_no;
 	}
 
-	public String getWriter() {
-		return writer;
+	
+
+	public String getBikereply_writer() {
+		return bikereply_writer;
 	}
 
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setBikereply_writer(String bikereply_writer) {
+		this.bikereply_writer = bikereply_writer;
 	}
 
 	public String getBikereply_content() {
@@ -65,10 +67,12 @@ public class BikeReplyVO {
 
 	@Override
 	public String toString() {
-		return "BikeReplyVO [bikereply_no=" + bikereply_no + ", bike_no=" + bike_no + ", writer=" + writer
-				+ ", bikereply_content=" + bikereply_content + ", bikereply_rating=" + bikereply_rating + ", date="
-				+ date + "]";
+		return "BikeReplyVO [bikereply_no=" + bikereply_no + ", bike_no=" + bike_no + ", bikereply_writer="
+				+ bikereply_writer + ", bikereply_content=" + bikereply_content + ", bikereply_rating="
+				+ bikereply_rating + ", date=" + date + "]";
 	}
+
+
 
 	
 	

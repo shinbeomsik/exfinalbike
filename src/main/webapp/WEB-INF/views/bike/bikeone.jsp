@@ -1,10 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<% String bike_no = request.getParameter("bike_no"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="../resources/js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		$('#bikereplybtn').click(function() {
+			bikereply_writer = "APPLE"
+			bikereply_content =  $('#content').val()
+			bikereply_rating =  $('input[name=bikereply_rating]').val()
+			
+			$.ajax({
+				url : "bikereplyinsert",
+				data : {	
+					bike_no : ${bag.bike_no},
+					bikereply_writer : bikereply_writer,
+					bikereply_content : bikereply_content,
+					bikereply_rating : bikereply_rating
+				},
+				success : function(x) {
+					alert('성공')
+					$('#onereply').html(x)
+				}//success
+			})//ajax
+		})//bikereplybtn
+	})
+	
+</script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -61,9 +87,10 @@ td {
 	text-shadow: 0 0 0 #f0f0f0;
 }
 
- #myform label:hover {
+#myform label:hover {
 	text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-} 
+}
+
 #myform label:hover ~ label {
 	text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
@@ -115,24 +142,32 @@ td {
 			</table>
 		</div>
 		<div id="bikereply">
-			<form  action="bikereplyinsert" id="myform" method="post">
+			<form id="myform">
 				<fieldset>
-					<span class="text-bold">별점을 선택해주세요</span><input type="radio"
-						name="bikereply_rating" value="5" id="rate1"><label for="rate1">★</label>
-					<input type="radio" name="bikereply_rating" value="4" id="rate2"><label
-						for="rate2">★</label> <input type="radio" name="bikereply_rating"
-						value="3" id="rate3"><label for="rate3">★</label> <input
-						type="radio" name="bikereply_rating" value="2" id="rate4"><label
-						for="rate4">★</label> <input type="radio" name="bikereply_rating"
-						value="1" id="rate5"><label for="rate5">★</label>
+					<span class="text-bold">별점을 선택해주세요</span> 
+					<input type="radio"	name="bikereply_rating" value="5" id="rate1"><label
+						for="rate1">★</label> 
+						<input type="radio" name="bikereply_rating"
+						value="4" id="rate2"><label for="rate2">★</label> 
+						<input
+						type="radio" name="bikereply_rating" value="3" id="rate3"><label
+						for="rate3">★</label> 
+						<input type="radio" name="bikereply_rating"
+						value="2" id="rate4"><label for="rate4">★</label> 
+						<input
+						type="radio" name="bikereply_rating" value="1" id="rate5"><label
+						for="rate5">★</label>
 				</fieldset>
 				<div>
-					<textarea  type="text" style="resize: none; width: 100%;"
-						id="Content" name="bikereply_content"
+					<textarea type="text" style="resize: none; width: 100%;"
+						id="content" name="bikereply_content"
 						placeholder="1000자 이내로 작성해주세요"></textarea>
 				</div>
-				 <button style="float: right;" type="submit">등록</button> 
 			</form>
+				<button style="float: right;"  id="bikereplybtn">등록</button>
+		</div>
+		<div id="onereply" style="width: 100%;">
+		
 		</div>
 	</div>
 </body>
