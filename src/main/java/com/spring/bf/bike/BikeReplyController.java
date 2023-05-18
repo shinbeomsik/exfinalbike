@@ -30,9 +30,11 @@ public class BikeReplyController {
 		bag.setDate(Timestamp.valueOf(LocalDateTime.now()));
 		
 		
-		BikeVO vo = new BikeVO();
-		
-		session.setAttribute("bike_no", vo.getBike_no());
+		/*
+		 * BikeVO vo = new BikeVO();
+		 * 
+		 * session.setAttribute("bike_no", vo.getBike_no());
+		 */
 		
 		dao.insert(bag);
 		
