@@ -1,7 +1,6 @@
 package com.spring.bf.bike;
 
 import java.sql.Timestamp;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class BikeReplyVO {
@@ -12,7 +11,7 @@ public class BikeReplyVO {
 	private String bikereply_content;
 	private String bikereply_rating;
 	
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Timestamp date;
 
 	public int getBikereply_no() {

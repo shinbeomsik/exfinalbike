@@ -7,16 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
 
 @Controller
 public class BikeController {
 
 	@Autowired
 	BikeDAO dao;
+	
 	
 	@Autowired
 	BikeReplyDAO dao2;
@@ -58,7 +61,7 @@ public class BikeController {
 		List<BikeVO> list = dao.all(vo);
 		int count = dao.count();
 		System.out.println("all count>> " + count);
-		int pages = count / 6 + 1; // 전체 페이지 개수 구하
+		int pages = count / 6 + 1; // 전체 페이지 개수 
 		model.addAttribute("list", list);
 		model.addAttribute("count", count);
 		model.addAttribute("pages", pages);
@@ -67,10 +70,14 @@ public class BikeController {
 	//자전거 상세페이지	
 	@RequestMapping("bike/bikeone")
 	public void one(int bike_no, Model model) {
-		BikeVO bag = dao.one(bike_no);
-		//댓글 리스트 dao2.
 		
+		BikeVO bag = dao.one(bike_no);
 		model.addAttribute("bag", bag);
+		
+		List<BikeReplyVO> list = dao2.list(bike_no);
+		System.out.println(list.size());
+		model.addAttribute("list", list);
+		
 	}
 
 }

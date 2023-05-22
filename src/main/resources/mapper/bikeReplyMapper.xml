@@ -7,7 +7,14 @@
 		insert into bikereply values
 		(null,#{bikereply_writer} ,#{bikereply_content},#{bike_no}, now(),#{bikereply_rating})
 	</insert>
-
+ 	
+ 	<select id="all" resultType="bikereplyVO">
+ 		select * from bikereply where bike_no = #{bike_no}
+ 	</select>
+ 	
+ 	<delete id="delete" parameterType="Integer">
+ 		delete from bikereply where bikereply_no = #{bikereply_no}
+ 	</delete>
 
 
 </mapper>

@@ -2,6 +2,7 @@ package com.spring.bf.bike;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -24,21 +25,24 @@ public class BikeReplyController {
 	BikeReplyDAO dao;
 
 	@RequestMapping("bike/bikereplyinsert")
-	public void insert(BikeReplyVO bag ) {
-		
+	public void insert(BikeReplyVO bag,Model model) {
+	
 		//Mapper에 그냥 now()함수써서 넣어봄 안되면 이걸로 다시 바꿔야함
-		//bag.setDate(Timestamp.valueOf(LocalDateTime.now()));
 		
-		
-		/*
-		 * BikeVO vo = new BikeVO();
-		 * 
-		 * session.setAttribute("bike_no", vo.getBike_no());
-		 */
-		
-		dao.insert(bag);
-		
-		
+		 dao.insert(bag);
+		 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 bag.setDate(Timestamp.valueOf(sdf.format(timestamp)));
+		 model.addAttribute("bag", bag);
 	}
+	
+	@RequestMapping("bike/bikereplydelete")
+	public void delete(int bikereply_no) {
+		dao.delete(bikereply_no);
+	}
+	
+	
+	
+	
 
 }

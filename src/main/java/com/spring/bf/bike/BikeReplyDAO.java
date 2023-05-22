@@ -21,4 +21,18 @@ public class BikeReplyDAO {
 	
 	
 	
+	
+	public List<BikeReplyVO> list(int bike_no) {
+		List<BikeReplyVO> list= my.selectList("bikereply.all",bike_no);
+		System.out.println(list.size());
+		return list;
+	}
+	
+	public int delete(int bikereply_no) {
+		int result = my.delete("bikereply.delete", bikereply_no);
+		return result;
+	}
+	
+	
+	
 }
