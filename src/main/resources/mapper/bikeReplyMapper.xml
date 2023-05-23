@@ -15,6 +15,13 @@
  	<delete id="delete" parameterType="Integer">
  		delete from bikereply where bikereply_no = #{bikereply_no}
  	</delete>
-
+	
+	<select id="one" parameterType="int" resultType="bikereplyVO">
+		select * from bikereply where bikereply_no = #{bikereply_no}
+	</select>
+	
+	<update id="update" parameterType="bikereplyVO">
+		update bikereply set bikereply_content = #{bikereply_content} where bikereply_no = #{bikereply_no}
+	</update>
 
 </mapper>

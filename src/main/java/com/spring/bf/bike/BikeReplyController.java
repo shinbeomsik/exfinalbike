@@ -42,6 +42,17 @@ public class BikeReplyController {
 	}
 	
 	
+	@RequestMapping("bike/bikereplyupdate")
+	public void update(int bikereply_no,Model model) {
+		BikeReplyVO vo = dao.one(bikereply_no);
+		model.addAttribute("vo",vo);
+	}
+	
+	@RequestMapping("bike/bikereplyupdate2")
+	public void update2(BikeReplyVO vo) {
+		dao.update(vo);
+	}
+	
 	
 	
 

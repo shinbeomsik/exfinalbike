@@ -19,9 +19,6 @@ public class BikeReplyDAO {
 		
 	}
 	
-	
-	
-	
 	public List<BikeReplyVO> list(int bike_no) {
 		List<BikeReplyVO> list= my.selectList("bikereply.all",bike_no);
 		System.out.println(list.size());
@@ -33,6 +30,14 @@ public class BikeReplyDAO {
 		return result;
 	}
 	
+	public int update(BikeReplyVO vo) {
+		int result = my.update("bikereply.update" , vo);
+		return result;
+	}
 	
+	public BikeReplyVO one(int bikereply_no) {
+		BikeReplyVO	vo = my.selectOne("bikereply.one", bikereply_no);
+		return vo;
+	}
 	
 }
